@@ -122,10 +122,10 @@ export const tokens = (mode) => ({
 export const themeSettings = (mode) => {
     const colors = tokens(mode);
 
-    return {
+    return createTheme({
         palette: {
             mode: mode,
-            ...colors(mode === 'dark' ? {
+            ...(mode === 'dark' ? {
                 primary: {
                     main: colors.primary[500],
                 },
@@ -184,7 +184,7 @@ export const themeSettings = (mode) => {
                 fontSize: 14,
             },
         }
-    }
+    });
 };
 
 //contact for color mode
